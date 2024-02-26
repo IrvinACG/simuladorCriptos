@@ -1,0 +1,33 @@
+#Spring configuration
+server:
+  port: 8086
+spring:
+  application:
+    name: SpringBoot_Kafka_Criptos_Consumer 
+#Kafka configuration
+  kafka:
+    bootstrap-servers: <SERVER> #Personalizado
+    properties:
+      sasl:
+        jaas:
+          #USER Y PASSWORD de cloud-karakfa
+          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="<USER>" password="<PASSWORD>";
+        mechanism: SCRAM-SHA-256
+      security:
+        protocol: SASL_SSL
+    consumer:
+      group-id: vuljfear-cripto #Personalizado
+
+#Configuracion ElasticSearch
+elastic-search:
+  user: <USER>  #Personazalido
+  pass: <PASSWORD> #Personalizado
+  host: <HOST> #Personalizado
+  port: 9200
+  index-crypto: <INDEX>      
+      
+#Configuracion CloudKarafka
+cloud-karafka:
+  user: <USER> #Personalizado
+  pass: <PASSWORD> #Personalizado
+  topic-crypto: <TOPIC> #Personalizado

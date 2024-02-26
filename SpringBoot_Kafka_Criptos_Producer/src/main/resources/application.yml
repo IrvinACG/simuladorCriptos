@@ -1,0 +1,19 @@
+#Spring configuration
+server:
+  port: 8085
+spring:
+  application:
+    name: SpringBoot_Kafka_Criptos_Producer 
+#Kafka configuration
+  kafka:
+    bootstrap-servers: <SERVER> #Personalizado
+    properties:
+      sasl:
+        mechanism: SCRAM-SHA-256
+      security:
+        protocol: SASL_SSL
+
+cloud-karafka:
+  user: <USER> #Personalizado
+  pass: <PASSWORD> #Personalizado
+  topic-crypto: <TOPIC> #Personalizado
